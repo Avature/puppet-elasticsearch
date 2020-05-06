@@ -172,7 +172,7 @@ define elasticsearch::hot_warm_cold_lifecycle_policy (
     cold_freeze                       => $cold_freeze,
     cold_unfollow                     => $cold_unfollow,
     delete_min_age                    => $delete_min_age,
-    delete_delete                     => $delete_delete
+    delete_delete                     => $delete_delete,
     protocol                          => $api_protocol,
     host                              => $api_host,
     port                              => $api_port,
