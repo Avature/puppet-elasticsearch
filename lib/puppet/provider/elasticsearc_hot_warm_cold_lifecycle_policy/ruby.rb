@@ -119,7 +119,7 @@ Puppet::Type.type(:elasticsearch_hot_warm_cold_lifecycle_policy).provide(
   end
 
   private def setOrDelete(body_hash, conditional, key, value)
-    if (conditional) then
+    if conditional
       body_hash[key] = value
     else
       body_hash.delete(key)
