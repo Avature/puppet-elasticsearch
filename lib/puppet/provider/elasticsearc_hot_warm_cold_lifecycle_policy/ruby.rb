@@ -84,9 +84,9 @@ Puppet::Type.type(:elasticsearch_hot_warm_cold_lifecycle_policy).provide(
       'rollover',
       {}
     )
-    setOrDelete(body['phases']['hot']['actions']['rollover'], resource[:hot_rollover_max_size.present?], 'max_size', resource[:hot_rollover_max_size])
-    setOrDelete(body['phases']['hot']['actions']['rollover'], resource[:hot_rollover_max_docs.present?], 'max_docs', resource[:hot_rollover_max_docs])
-    setOrDelete(body['phases']['hot']['actions']['rollover'], resource[:hot_rollover_max_age.present?], 'max_age', resource[:hot_rollover_max_age])
+    setOrDelete(body['phases']['hot']['actions']['rollover'], resource[:hot_rollover_max_size].present?, 'max_size', resource[:hot_rollover_max_size])
+    setOrDelete(body['phases']['hot']['actions']['rollover'], resource[:hot_rollover_max_docs].present?, 'max_docs', resource[:hot_rollover_max_docs])
+    setOrDelete(body['phases']['hot']['actions']['rollover'], resource[:hot_rollover_max_age].present?, 'max_age', resource[:hot_rollover_max_age])
     setOrDelete(body['phases']['hot']['actions'], resource[:hot_unfollow], 'unfollow', {})
     setOrDelete(
       body['phases']['warm']['actions'],
@@ -94,10 +94,10 @@ Puppet::Type.type(:elasticsearch_hot_warm_cold_lifecycle_policy).provide(
       'allocate',
       {}
     )
-    setOrDelete(body['phases']['warm']['actions']['allocate'], resource[:warm_allocate_number_of_replicas.present?], 'number_of_replicas', resource[:warm_allocate_number_of_replicas])
-    setOrDelete(body['phases']['warm']['actions']['allocate'], resource[:warm_allocate_include.present?], 'include', resource[:warm_allocate_include])
-    setOrDelete(body['phases']['warm']['actions']['allocate'], resource[:warm_allocate_exclude.present?], 'exclude', resource[:warm_allocate_exclude])
-    setOrDelete(body['phases']['warm']['actions']['allocate'], resource[:warm_allocate_require.present?], 'require', resource[:warm_allocate_require])
+    setOrDelete(body['phases']['warm']['actions']['allocate'], resource[:warm_allocate_number_of_replicas].present?, 'number_of_replicas', resource[:warm_allocate_number_of_replicas])
+    setOrDelete(body['phases']['warm']['actions']['allocate'], resource[:warm_allocate_include].present?, 'include', resource[:warm_allocate_include])
+    setOrDelete(body['phases']['warm']['actions']['allocate'], resource[:warm_allocate_exclude].present?, 'exclude', resource[:warm_allocate_exclude])
+    setOrDelete(body['phases']['warm']['actions']['allocate'], resource[:warm_allocate_require].present?, 'require', resource[:warm_allocate_require])
     setOrDelete(body['phases']['warm']['actions'], resource[:warm_read_only], 'readonly', {})
     setOrDelete(body['phases']['warm']['actions'], resource[:warm_force_merge_max_num_segments], 'forcemerge', {'max_num_segments' => resource[:warm_force_merge_max_num_segments]})
     setOrDelete(body['phases']['warm']['actions'], resource[:warm_shrink_number_of_shards], 'shrink', {'number_of_shards' => resource[:warm_shrink_number_of_shards]})
@@ -108,10 +108,10 @@ Puppet::Type.type(:elasticsearch_hot_warm_cold_lifecycle_policy).provide(
       'allocate',
       {}
     )
-    setOrDelete(body['phases']['cold']['actions']['allocate'], resource[:cold_allocate_number_of_replicas.present?], 'number_of_replicas', resource[:cold_allocate_number_of_replicas])
-    setOrDelete(body['phases']['cold']['actions']['allocate'], resource[:cold_allocate_include.present?], 'include', resource[:cold_allocate_include])
-    setOrDelete(body['phases']['cold']['actions']['allocate'], resource[:cold_allocate_exclude.present?], 'exclude', resource[:cold_allocate_exclude])
-    setOrDelete(body['phases']['cold']['actions']['allocate'], resource[:cold_allocate_require.present?], 'require', resource[:cold_allocate_require])
+    setOrDelete(body['phases']['cold']['actions']['allocate'], resource[:cold_allocate_number_of_replicas].present?, 'number_of_replicas', resource[:cold_allocate_number_of_replicas])
+    setOrDelete(body['phases']['cold']['actions']['allocate'], resource[:cold_allocate_include].present?, 'include', resource[:cold_allocate_include])
+    setOrDelete(body['phases']['cold']['actions']['allocate'], resource[:cold_allocate_exclude].present?, 'exclude', resource[:cold_allocate_exclude])
+    setOrDelete(body['phases']['cold']['actions']['allocate'], resource[:cold_allocate_require].present?, 'require', resource[:cold_allocate_require])
     setOrDelete(body['phases']['cold']['actions'], resource[:cold_freeze], 'freeze', {})
     setOrDelete(body['phases']['cold']['actions'], resource[:cold_unfollow], 'unfollow', {})
     setOrDelete(body['phases']['delete']['actions'], resource[:delete_delete], 'delete', {})
