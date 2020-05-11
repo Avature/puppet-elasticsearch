@@ -107,6 +107,7 @@
 #
 # @author Gustavo Yoshizaki
 define elasticsearch::hot_warm_cold_lifecycle_policy (
+  String                          $name                              = 'hot_warm_cold_lifecycle_policy',
   Enum['absent', 'present']       $ensure                            = 'present',
   Optional[String]                $api_basic_auth_password           = $elasticsearch::api_basic_auth_password,
   Optional[String]                $api_basic_auth_username           = $elasticsearch::api_basic_auth_username,
