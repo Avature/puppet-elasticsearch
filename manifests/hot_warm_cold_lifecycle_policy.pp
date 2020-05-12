@@ -121,6 +121,7 @@ define elasticsearch::hot_warm_cold_lifecycle_policy (
   Optional[Integer]               $hot_rollover_max_size             = undef,
   Optional[Integer]               $hot_rollover_max_docs             = undef,
   Optional[Integer]               $hot_rollover_max_age              = undef,
+  Optional[Boolean]               $hot_unfollow                      = undef,
   Optional[Integer]               $warm_min_age                      = undef,
   Optional[Integer]               $warm_priority                     = undef,
   Optional[Boolean]               $warm_unfollow                     = undef,
