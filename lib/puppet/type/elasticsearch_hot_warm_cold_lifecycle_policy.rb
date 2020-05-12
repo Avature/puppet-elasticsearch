@@ -27,6 +27,11 @@ Puppet::Type.newtype(:elasticsearch_hot_warm_cold_lifecycle_policy) do
     desc 'Max time elapsed from index creation before doing rollover'
   end
 
+
+  newproperty(:hot_unfollow) do
+    desc 'This action turns a ccr follower index into a regular index'
+  end
+
   newproperty(:warm_min_age) do
     desc 'Indices enter phases based on a phase’s min_age parameter. The index will not enter the phase until the index’s age is older than that of the min_age'
   end

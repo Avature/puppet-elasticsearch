@@ -153,6 +153,7 @@ define elasticsearch::hot_warm_cold_lifecycle_policy (
     hot_rollover_max_size             => $hot_rollover_max_size,
     hot_rollover_max_docs             => $hot_rollover_max_docs,
     hot_rollover_max_age              => $hot_rollover_max_age,
+    hot_unfollow                      => $hot_unfollow,
     warm_min_age                      => $warm_min_age,
     warm_priority                     => $warm_priority,
     warm_unfollow                     => $warm_unfollow,
