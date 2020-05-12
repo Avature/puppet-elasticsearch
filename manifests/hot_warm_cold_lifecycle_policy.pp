@@ -45,6 +45,9 @@
 # @param hot_rollover_max_age
 #   Max time elapsed from index creation
 #
+# @param hot_unfollow
+#   This action turns a ccr follower index into a regular index
+#
 # @param warm_min_age
 #   Indices enter phases based on a phase’s min_age parameter. The index will not enter the phase until the index’s age is older than that of the min_age
 #
