@@ -27,7 +27,6 @@ Puppet::Type.newtype(:elasticsearch_hot_warm_cold_lifecycle_policy) do
     desc 'Max time elapsed from index creation before doing rollover'
   end
 
-
   newproperty(:hot_unfollow) do
     desc 'This action turns a ccr follower index into a regular index'
   end
