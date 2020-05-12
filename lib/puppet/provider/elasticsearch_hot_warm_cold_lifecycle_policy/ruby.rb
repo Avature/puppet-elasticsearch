@@ -38,7 +38,7 @@ Puppet::Type.type(:elasticsearch_hot_warm_cold_lifecycle_policy).provide(
       'allocate',
       {}
     )
-    setOrDelete(body['phases']['cold']['min_age'], !resource[:min_age].nil?, 'min_age', resource[:min_age])
+    setOrDelete(body['phases']['cold']['min_age'], !resource[:cold_min_age].nil?, 'min_age', resource[:cold_min_age])
     setOrDelete(body['phases']['cold']['actions']['allocate'], !resource[:cold_allocate_require].nil?, 'require', resource[:cold_allocate_require])
     JSON.generate(body)
   end
