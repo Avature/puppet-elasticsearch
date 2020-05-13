@@ -28,18 +28,15 @@ Puppet::Type.type(:elasticsearch_hot_warm_cold_lifecycle_policy).provide(
       'phases' => {
         'cold'   => {
           'actions' => {
+            'allocate' => {}
           }
         }
       }
     }
-    setOrDelete(
-      body['phases']['cold']['actions'],
-      !resource[:cold_allocate_require].nil?,
-      'allocate',
-      {}
-    )
-    setOrDelete(body['phases']['cold']['min_age'], !resource[:cold_min_age].nil?, 'min_age', resource[:cold_min_age])
-    setOrDelete(body['phases']['cold']['actions']['allocate'], !resource[:cold_allocate_require].nil?, 'require', resource[:cold_allocate_require])
+    body['phases']['cold']['min_age'] = resource[:cold_min_age];
+    body['phases']['cold']['actions']['allocate'] = resource[:cold_allocate_require];
+    #setOrDelete(body['phases']['cold']['min_age'], !resource[:cold_min_age].nil?, 'min_age', resource[:cold_min_age])
+    #setOrDelete(body['phases']['cold']['actions']['allocate'], !resource[:cold_allocate_require].nil?, 'require', resource[:cold_allocate_require])
     JSON.generate(body)
   end
 
