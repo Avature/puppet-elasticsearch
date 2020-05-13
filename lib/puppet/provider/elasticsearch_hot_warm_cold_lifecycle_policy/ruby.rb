@@ -10,7 +10,7 @@ Puppet::Type.type(:elasticsearch_hot_warm_cold_lifecycle_policy).provide(
   desc 'A REST API based provider to manage Elasticsearch hot-warm-cold lifecycle policy.'
   mk_resource_methods
   def self.process_body(body)
-    phases = JSON.parse(body)['policy']['phases']
+    #phases = JSON.parse(body)['policy']['phases']
     #coldPhasePresent = phases['cold'] != nil
     results =
       {
@@ -42,11 +42,4 @@ Puppet::Type.type(:elasticsearch_hot_warm_cold_lifecycle_policy).provide(
     JSON.generate(body)
   end
 
-  private def setOrDelete(body_hash, conditional, key, value)
-    if conditional then
-      body_hash[key] = value
-    else
-      body_hash.delete(key)
-    end
-  end
 end
