@@ -28,8 +28,10 @@ Puppet::Type.type(:elasticsearch_hot_warm_cold_lifecycle_policy).provide(
     body = {
       'policy' => {
         'phases' => {
-          'cold'   => {
-            'min_age' => '10d'
+          'cold' => {
+            'min_age' => '10d',
+            'actions' => {
+            }
           }
         }
       }
@@ -39,7 +41,6 @@ Puppet::Type.type(:elasticsearch_hot_warm_cold_lifecycle_policy).provide(
     #body['phases']['cold']['actions']['allocate'] = resource[:cold_allocate_require];
     #setOrDelete(body['phases']['cold']['min_age'], !resource[:cold_min_age].nil?, 'min_age', resource[:cold_min_age])
     #setOrDelete(body['phases']['cold']['actions']['allocate'], !resource[:cold_allocate_require].nil?, 'require', resource[:cold_allocate_require])
-    Puppet.info(JSON.generate(body))
     JSON.generate(body)
   end
 
