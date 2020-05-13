@@ -21,7 +21,8 @@ Puppet::Type.type(:elasticsearch_hot_warm_cold_lifecycle_policy).provide(
         #:cold_allocate_require             => phases['cold']['actions']['allocate']['require'],
         :provider                          => name
       }
-    results
+      Puppet.info(results)
+      results
   end
 
   def generate_body
