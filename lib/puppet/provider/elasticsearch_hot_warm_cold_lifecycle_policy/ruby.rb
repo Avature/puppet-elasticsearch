@@ -5,7 +5,7 @@ require 'puppet/provider/elastic_rest'
 Puppet::Type.type(:elasticsearch_hot_warm_cold_lifecycle_policy).provide(
   :ruby,
   :parent => Puppet::Provider::ElasticREST,
-  :api_uri => '_slm/policy'
+  :api_uri => '_ilm/policy'
 ) do
   desc 'A REST API based provider to manage Elasticsearch hot-warm-cold lifecycle policy.'
   mk_resource_methods
