@@ -28,13 +28,11 @@ Puppet::Type.type(:elasticsearch_hot_warm_cold_lifecycle_policy).provide(
     body = {
       'phases' => {
         'cold'   => {
-          'actions' => {
-            'allocate' => {}
-          }
+          'min_age' => 10
         }
       }
     }
-    body['phases']['cold']['min_age'] = 10
+    #body['phases']['cold']['min_age'] = 10
     #body['phases']['cold']['min_age'] = resource[:cold_min_age];
     #body['phases']['cold']['actions']['allocate'] = resource[:cold_allocate_require];
     #setOrDelete(body['phases']['cold']['min_age'], !resource[:cold_min_age].nil?, 'min_age', resource[:cold_min_age])
