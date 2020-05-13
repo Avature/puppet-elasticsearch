@@ -16,7 +16,7 @@ Puppet::Type.type(:elasticsearch_hot_warm_cold_lifecycle_policy).provide(
       {
         :name                              => 'policy',
         :ensure                            => :present,
-        :cold_min_age                      => 10,
+        :cold_min_age                      => '10d',
         #:cold_min_age                      => phases['cold']['min_age'],
         #:cold_allocate_require             => phases['cold']['actions']['allocate']['require'],
         :provider                          => name
@@ -29,7 +29,7 @@ Puppet::Type.type(:elasticsearch_hot_warm_cold_lifecycle_policy).provide(
       'policy' => {
         'phases' => {
           'cold'   => {
-            'min_age' => 10
+            'min_age' => '10d'
           }
         }
       }
