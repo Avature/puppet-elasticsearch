@@ -120,7 +120,7 @@ define elasticsearch::hot_warm_cold_lifecycle_policy (
   Enum['http', 'https']           $api_protocol                      = $elasticsearch::api_protocol,
   Integer                         $api_timeout                       = $elasticsearch::api_timeout,
   Boolean                         $validate_tls                      = $elasticsearch::validate_tls,
-  Optional[String]                $cold_min_age                      = undef,
+  Optional[String]                $cold_min_age                      = '10d',
   Optional[Hash]                  $cold_allocate_require             = undef,
   ) {
   es_instance_conn_validator { "${name}-hot-warm-cold_lifecycle_policy":
