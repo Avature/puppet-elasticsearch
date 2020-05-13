@@ -26,9 +26,11 @@ Puppet::Type.type(:elasticsearch_hot_warm_cold_lifecycle_policy).provide(
 
   def generate_body
     body = {
-      'phases' => {
-        'cold'   => {
-          'min_age' => 10
+      'policy' => {
+        'phases' => {
+          'cold'   => {
+            'min_age' => 10
+          }
         }
       }
     }
