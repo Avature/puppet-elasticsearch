@@ -37,10 +37,6 @@
 # @param api_timeout
 #   Timeout period (in seconds) for the Elasticsearch API.
 #
-# @param content
-#   Contents of the template. Can be either a puppet hash or a string
-#   containing JSON.
-#
 # @param source
 #   Source path for the template file. Can be any value similar to `source`
 #   values for `file` resources.
@@ -82,7 +78,6 @@ define elasticsearch::ilm_policy (
   } -> elasticsearch_ilm_policy { $name:
     ensure       => $ensure,
     content      => $_content,
-    source       => $source,
     protocol     => $api_protocol,
     host         => $api_host,
     port         => $api_port,
